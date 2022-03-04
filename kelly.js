@@ -98,7 +98,7 @@ function e2(){
 }
 
 function q3(){
-	document.getElementById("main").innerHTML = "<p>McSally has been endorsed by Republican Governor Doug Ducey. Will you attack her for this?</p><br><button onclick='a2()'>Yes!</button><br><button onclick='b2()'>No</button>";
+	document.getElementById("main").innerHTML = "<p>McSally has been endorsed by Republican Governor Doug Ducey. Will you attack her for this?</p><br><button onclick='a3()'>Yes!</button><br><button onclick='b3()'>No</button>";
 }
 
 function a3(){
