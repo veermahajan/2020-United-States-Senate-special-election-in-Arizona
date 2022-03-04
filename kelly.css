@@ -1,8 +1,9 @@
 button{
-  border:1px solid black;
-  border-radius: 10%;
-  background-color:blue;
-  color:black;
+  border: 1px solid black;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  background-color: blue;
+  color: black;
 }
 body{
   color:blue;
