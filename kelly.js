@@ -113,5 +113,34 @@ function b3(){
 }
 
 function q4(){
-	alert("Wait a minute while I meditate!");
+	document.getElementById("main").innerHTML = "<p>You have gotten news that McSally is about to be endorsed by Buzz Aldrin and three other astronauts. This is because of her breaking barriers in the military. How will you respond?</p><br><button onclick='a4()'>We will ask Scott to ask them to decline any endorsements</button><br><button onclick='b4()'>We will ignore them</button>";
+}
+
+function a4(){
+  for (var i = 0; i < percentages.length; i++){
+  	percentages[i] += (Math.floor(Math.random() + 50) + 75)/100;
+  }
+	document.getElementById("main").innerHTML = "<p>Aldrin decides not to endorse anyone; this helps you.</p><br><button onclick='q5()'>Next</button>";
+}
+
+function b4(){
+	document.getElementById("main").innerHTML = "<p>Your brother would have been able to stop Aldrin.</p><br><button onclick='q5()'>Next</button>";
+}
+
+function q5(){
+	document.getElementById("main").innerHTML = "<p>How much do you want Obama to campaign with you?</p><br><button onclick='a5()'>Of course we want Obama to campaign with us, but we also want others, like Sinema, to campaign</button><br><button onclick='b5()'>We want Obama, and only Obama, to campaign for us</button>";
+}
+
+function a5(){
+  for (var i = 0; i < percentages.length; i++){
+  	percentages[i] += (Math.floor(Math.random() + 50) + 75)/100;
+  }
+	document.getElementById("main").innerHTML = "<p>This is your best choice.</p><br><button onclick='q5()'>Next</button>";
+}
+
+function b5(){
+  for (var i = 0; i < percentages.length; i++){
+  	percentages[i] += (Math.floor(Math.random() + 5) + 15)/100;
+  }
+	document.getElementById("main").innerHTML = "<p>This is a decent choice, but you should have others campaigning as well.</p><br><button onclick='q5()'>Next</button>";
 }
