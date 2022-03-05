@@ -1,4 +1,5 @@
 var percentages = [68.5, 41.5, 62.5, 35, 30.5, 38.5, 34, 52, 26.5, 47.5, 60, 43, 70.5, 36.5, 49];
+var counties = ["Apache", "Cochise", "Coconino", "Gila", "Graham", "Greenlee", "La Paz", "Maricopa", "Mohave", "Navajo", "Pima", "Pinal", "Santa Cruz", "Yavapai", "Yuma"];
 var apachePop = 35000;
 var cochisePop = 60000;
 var coconinoPop = 73000;
@@ -135,12 +136,30 @@ function a5(){
   for (var i = 0; i < percentages.length; i++){
   	percentages[i] += (Math.floor(Math.random() + 50) + 75)/100;
   }
-	document.getElementById("main").innerHTML = "<p>This is your best choice.</p><br><button onclick='q5()'>Next</button>";
+	document.getElementById("main").innerHTML = "<p>This is your best choice.</p><br><button onclick='q6()'>Next</button>";
 }
 
 function b5(){
   for (var i = 0; i < percentages.length; i++){
   	percentages[i] += (Math.floor(Math.random() + 5) + 15)/100;
   }
-	document.getElementById("main").innerHTML = "<p>This is a decent choice, but you should have others campaigning as well.</p><br><button onclick='q5()'>Next</button>";
+	document.getElementById("main").innerHTML = "<p>This is a decent choice, but you should have others campaigning as well.</p><br><button onclick='q6()'>Next</button>";
+}
+
+function showFinal(){
+	var text = "<table><tr><th>County</th><th>Democratic % (2 way vote)</th><th>Republican % (2 way vote)</th></tr>";
+	for (var i = 0; i < percentages.length; i++){
+		if (percentages[i] > 50){
+			text += "<tr><td>" + counties[i] + "</td><td style='background-color:blue;'>" + percentages[i] + "</td><td>" + (100 - percentages[i]) + "</td></tr>";
+		}
+		else{
+			text += "<tr><td>" + counties[i] + "</td><td>" + percentages[i] + "</td><td style='background-color:red;>" + (100 - percentages[i]) + "</td></tr>";
+		}
+	}
+	text += "</table>";
+	document.getElementById("main").innerHTML = text;
+}
+
+function q5(){
+	showFinal();
 }
